@@ -1,0 +1,37 @@
+
+
+<h1 class="heading">Taste the tradition, enjoy the flavors & <br> <span>celebrate every meal with us.</span> </h1>
+<p class="sub-heading">Welcome to a place where every craving finds its perfect match.
+Start your journey with our crispy and delicious starters.
+Indulge in rich, aromatic biryanis made with authentic spices.
+Complete your meal with our delightful and sweet desserts.
+Every dish is prepared with fresh ingredients and great care.
+We bring taste, quality, and happiness together in every order.
+Experience food that satisfies both your hunger and your heart.</p>
+
+<p>We believe great food creates great memories.
+Explore our variety of delicious starters to begin your feast.
+Savor the richness of our signature biryanis.
+Enjoy the perfect blend of spices in every bite.
+End your meal on a sweet note with our desserts.
+Quality and taste are our top priorities.
+Order today and experience food like never before.</p>
+
+<!-- <a routerLink="allitems">All Items</a> -->
+
+<h1 class="menu">Explore Our Menu</h1>
+
+<div class="category-container">
+  <div class="card-heading" *ngFor="let category of json?.categories">
+    <h2>{{ category.name }}</h2>
+    <div class="card" [style.background-image]="'url(' + category.image + ')'">
+      <div class="overlay">
+
+        <button [routerLink]="['/items', category.id]">View items</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+

@@ -8,7 +8,7 @@
   },
   "include": [
     "src/**/*.ts"
-  ],
+, "src/foodDataaa.ts"  ],
   "exclude": [
     "src/**/*.spec.ts"
   ]

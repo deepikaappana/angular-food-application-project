@@ -1,0 +1,46 @@
+.footer {
+  background: #111;
+  color: #fff;
+  text-align: center;
+  font-size: 30px;
+  padding: 10px;
+  border: 1px solid;
+  border-radius: 5px;
+
+
+}
+p{
+  padding: 10px;
+  font-size: 40px;
+}
+
+.footer h4 {
+  margin-bottom: 15px;
+  color: #ff9800;
+  font-size: 25px;
+}
+
+.footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer a {
+  text-decoration: none;
+  color: #ccc;
+}
+
+.footer ul li {
+  margin-bottom: 5px;
+  font-size: 20px;
+}
+
+
+.footer a:hover {
+  color: #ff9800;
+}
+
+.main{
+    display: flex;
+    justify-content: space-evenly;
+}

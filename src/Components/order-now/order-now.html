@@ -2,26 +2,44 @@
   <h2 class="cart-title">Your Cart</h2>
 
   <div class="cart-item" *ngFor="let each of selectedItems">
+    
     <div class="item-details">
-
       <h4>{{ each.name }}</h4>
-      <h6>Quantity: {{each.count}}</h6>
-      <p>₹ {{ each.price }}</p>
-    </div>
-    <div>
-      <img [src]="each.image" alt="{{each.name}}" class="item-image" />
 
+      
+      <div class="quantity-control">
+        <button (click)="decreaseItem(each)">-</button>
+        <span class="count">{{ each.count }}</span>
+        <button (click)="increaseItem(each)">+</button>
+      </div>
+
+      <p class="price">₹ {{ each.price }}</p>
     </div>
+
+    <div class="image-box">
+      <img [src]="each.image" alt="{{each.name}}" class="item-image" />
+    </div>
+
   </div>
 
+  
   <div class="cart-summary" *ngIf="selectedItems.length > 0">
     <h3>Total: ₹ {{ total }}</h3>
+
     <button class="pay-btn" (click)="makePayment()">
       Total Payable ₹ {{ total }}
     </button>
   </div>
 
+ 
   <div *ngIf="selectedItems.length === 0" class="empty-cart">
-    Your cart is empty 
+    Your cart is empty
+  </div>
+</div>
+
+
+<div class="container d-flex justify-content-center align-items-center" *ngIf="paymentSuccess">
+  <div class="payment-success">
+    <p>Your order will be delivered soon.</p>
   </div>
 </div>

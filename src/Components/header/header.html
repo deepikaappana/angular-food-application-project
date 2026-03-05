@@ -8,14 +8,14 @@
 
 
   <nav class="header-center">
-    <!-- <a routerLink="/">Home</a>  -->
+   
     <a routerLink="/categories">Home</a>
     <a routerLink="/all-items">All Items</a>
   </nav>
 
  
   <div class="header-right">
-    <a routerLink="order-now">Cart</a>
+    <a routerLink="order-now">Cart<span class="cart-count">{{ cartItemCount }}</span></a>
   <a routerLink="/profile">Profile</a>
   </div>
 

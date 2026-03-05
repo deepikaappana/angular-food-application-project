@@ -1,6 +1,6 @@
 
 
-<h1 class="heading">Taste the tradition, enjoy the flavors & <br> celebrate every meal with us.</h1>
+<h1 class="heading">Taste the tradition, enjoy the flavors & <br> celebrate every meal with us.se</h1>
 <p class="sub-heading">Welcome to a place where every craving finds its perfect match.
 Start your journey with our crispy and delicious starters.
 Indulge in rich, aromatic biryanis made with authentic spices.
@@ -21,15 +21,16 @@ Order today and experience food like never before.</p>
 
 <h1 class="menu">Explore Our Menu</h1>
 
-<div class="category-container">
-  <div class="card-heading" *ngFor="let category of json?.categories">
+<div class="category-container row">
+  <div class="card-heading col-lg-3 col-md-3 col-sm-6 mb-4" *ngFor="let category of json?.categories">
     <h2>{{ category.name }}</h2>
+
     <div class="card" [style.background-image]="'url(' + category.image + ')'">
       <div class="overlay">
-
         <button [routerLink]="['/items', category.id]">View items</button>
       </div>
     </div>
+
   </div>
 </div>
 

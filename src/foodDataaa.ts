@@ -14,6 +14,11 @@ const jsonData = {
       "id": 3,
       "name": "Desserts",
       "image": "https://www.pjponline.com/wp-content/uploads/2019/02/shutterstock_475360618-scaled.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Soups",
+      "image": "https://thumbs.dreamstime.com/b/north-indian-party-meal-punjabi-non-vegetarian-thali-indian-thaali-meal-butter-chicken-rajma-masala-chicken-biryani-tandoori-112712610.jpg"
     }
   ],
   "foods": [
@@ -73,12 +78,19 @@ const jsonData = {
       "price": 220,
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIpJaubPnOdSQKo11Y1YlxO2J256PM82HuJQ&s"
     },
-        {
+    {
       "id": 109,
       "categoryId": 3,
       "name": "Apricot Delight",
       "price": 220,
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIpJaubPnOdSQKo11Y1YlxO2J256PM82HuJQ&s"
+    },
+     {
+      "id": 106,
+      "categoryId": 2,
+      "name": "Mixed Biryani",
+      "price": 350,
+      "image": "https://static.wixstatic.com/media/359647_d63e4c60cf84412f97f5ba31f29a0d4d~mv2.png/v1/fill/w_690,h_460,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/359647_d63e4c60cf84412f97f5ba31f29a0d4d~mv2.png"
     }
   ],
 

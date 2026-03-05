@@ -1,6 +1,4 @@
-
-
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Cart } from '../../app/cart';
 import { CommonModule } from '@angular/common';
 
@@ -10,47 +8,58 @@ import { CommonModule } from '@angular/common';
   templateUrl: './order-now.html',
   styleUrl: './order-now.css',
 })
-export class OrderNow {
+export class OrderNow implements OnInit {
+
+  selectedItems: any[] = [];
+  total: number = 0;
+  paymentSuccess: boolean = false;
 
   constructor(private cartService: Cart) {}
 
-  public selectedItems: any = [];
-  public total: number = 0;
-
   ngOnInit() {
-  this.cartService.cartDetails.subscribe(res => {
-    if (res) {
 
-      this.total = 0;
+    this.cartService.cartDetails.subscribe((res:any) => {
 
-      const addedItems: any = {};
+      if(res){
 
-      res.forEach((x: any) => {
-        this.total += x.price;
+        const addedItems:any = {};
+        this.total = 0;
 
-        if (addedItems[x.id]) {
-          addedItems[x.id].count += 1;
-        } else {
-          addedItems[x.id] = {
-            ...x,
-            count: 1
-          };
-        }
+        res.forEach((x:any)=>{
 
+          this.total += x.price;
 
+          if(addedItems[x.id]){
+            addedItems[x.id].count += 1;
+          }else{
+            addedItems[x.id] = {
+              ...x,
+              count:1
+            };
+          }
 
-      });
-      this.selectedItems = Object.values(addedItems);
-    }
-  });
+        });
+
+        this.selectedItems = Object.values(addedItems);
+
+      }
+
+    });
+
+  }
+
+ increaseItem(item:any){
+  item.count += 1;
+  this.cartService.addToCart(item,true);
 }
 
-  makePayment() {
-    if (this.selectedItems.length === 0) {
-      alert("Your cart is empty!");
-    } else {
-      alert("Payment Successful ✅ your order placed ");
-      this.cartService.resetCart();
-    }
+  decreaseItem(item:any){
+    this.cartService.removeFromCart(item);
   }
+
+  makePayment(){
+    this.paymentSuccess = true;
+    this.cartService.resetCart();
+  }
+
 }
